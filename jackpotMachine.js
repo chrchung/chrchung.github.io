@@ -13,7 +13,7 @@ app.controller('myCtrl', function($scope) {
 		$scope.bacteria.push([]);
 
 		for (var j = 1; j < 5; j ++) {
-			$scope.bacteria[i - 1].push({url: '/Users/Christina/Dropbox/MatchingGame/GameDesignIdeas/bacteriajackpot/' + i + j + '.png', id: ('' + i + j)});
+			$scope.bacteria[i - 1].push({url: i + '' + j + '.png', id: (i + '' + j)});
 		}
 	}
 });
