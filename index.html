@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<head>
+	<style>
+	.selected {
+		background-color: yellow;
+	}
+	</style>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+	<div style="overflow:auto;max-height:60px;margin:20px;" ng-repeat="set in bacteria">
+		<div style="" ng-repeat="bacterium in set">
+			<img id="{{bacterium.id}}" class="img-responsive" ng-click="select($event)" style="cursor:pointer;height:60px;" ng-src="{{bacterium.url}}"/>
+		</div>
+	</div>
+
+</div>
+
+<script src="/Users/Christina/Dropbox/MatchingGame/GameDesignIdeas/bacteriajackpot/jackpotMachine.js"></script>
+
+
+</body>
+</html>
