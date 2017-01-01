@@ -1,28 +1,553 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <head>
-	<style>
-	.selected {
-		background-color: yellow;
-	}
-	</style>
-</head>
-<body>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="animate.css"/>
+  <link rel="stylesheet" href="semantic.min.css">
+  <link rel='stylesheet prefetch'
+        href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="semantic.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
-<div ng-app="myApp" ng-controller="myCtrl">
-	<div style="overflow:auto;max-height:60px;margin:20px;" ng-repeat="set in bacteria">
-		<div style="" ng-repeat="bacterium in set">
-			<img id="{{bacterium.id}}" class="img-responsive" ng-click="select($event)" style="cursor:pointer;height:60px;" ng-src="{{bacterium.url}}"/>
-		</div>
-	</div>
+  <title>Healthy Minds UofT</title>
+  <style>
+
+    /*font-family: 'Roboto', sans-serif;*/
+
+    @font-face {
+      font-family: robotob;
+      src: url('Roboto-Bold.ttf');
+    }
+
+    @font-face {
+      font-family: bebas;
+      src: url('BebasNeue Bold.otf');
+    }
+
+    .site-container {
+      margin-top: 5%;
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .page-heading {
+      font-family: bebas;
+      font-size: 42px;
+      margin-bottom: 2.5%;
+
+    }
+
+    #mission {
+      background-color: #f4f4f4;
+    }
+
+    #events {
+      /*		background-color: #e0e0e0;
+      */
+    }
+
+    #conference {
+      background-color: #f4f4f4;
+    }
+
+    #news {
+      /*		background-color: #bfbfbf;
+      */
+    }
+
+    #resources {
+      background-color: #f4f4f4;
+    }
+
+    #team {
+      /*		background-color: #fffdea;
+      */
+    }
+
+    #contact {
+      background-color: #f4f4f4;
+    }
+
+    .page-container {
+      /*	width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;*/
+      padding: 10%;
+    }
+
+    .text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+    }
+
+    .header {
+      font-family: robotob;
+      font-size: 16px;
+    }
+
+    .bglogo {
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-image: url(logo.png);
+    }
+
+    .bebas {
+      font-family: bebas;
+    }
+
+    .robotothin {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .robotobold {
+      font-family: robotob;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    #page-title {
+      font-size: 25px;
+    }
+
+    #team img {
+      object-fit: cover;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+      height: 250px;
+    }
+
+    .event {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .inter {
+      margin-bottom: 5%;
+    }
+
+    .member {
+      width: 20%;
+      margin: 2%;
+      display: inline-block;
+    }
+
+    @media only screen and (max-width:700px) {
+      .member {
+      width: 100%;
+      margin: 1%;
+      display: inline-block;
+    }
+
+    }
+
+
+  </style>
+</head>
+
+<body class="">
+
+<div class="ui fixed borderless menu">
+  <!--     <div class="ui center container">
+   --> <a id="page-title" href="#" class="bebas item">
+  Healthy Minds UofT
+</a>
+
+  <a href="#welcome" class="robotothin item">Welcome</a>
+  <a href="#mission" class="robotothin item">Mission</a>
+  <a href="#events" class="robotothin item">Events</a>
+  <a href="#conference" class="robotothin item">Conference</a>
+  <a href="#news" class="robotothin item">Newsletter</a>
+  <a href="#resources" class="robotothin item">Resources</a>
+  <a href="#team" class="robotothin item">The Team</a>
+  <a href="#contact" class="robotothin item">Contact</a>
+  <!--     </div>
+   -->  </div>
+
+<header id="welcome" class="bglogo">
+
+</header>
+
+<div>
+  <section class="page-container" id="mission">
+    <h1 class="bebas ">Our Mission</h1>
+    <div class="robotothin">
+      This club aims to help students build a strong, supportive community, reduce stigmatization of mental health,
+      raise awareness to the barriers that those with mental illnesses face on campus, provide strategies for self-care
+      to maximize each individual’s potential for success, and raise the quality of life for students living on and off
+      campus.
+    </div>
+  </section>
+
+  <section class="page-container" id="events">
+    <h1 class="bebas ">Events</h1>
+
+    <div class="event inter">
+      <h2 class="bebas">First General Meeting</h2>
+      <span>Thursday, January 2 2016</span><br>
+      <span>11:00am - 1:00pm</span><br>
+      <span>BA 3200</span><br><br>
+      <button class="ui basic large button">
+        Learn more
+      </button>
+    </div>
+
+    <div class="event">
+      <h2 class="bebas">Movie Night</h2>
+      <span>Thursday, January 2 2016</span><br>
+      <span>11:00pm - 1:00am</span><br>
+      <span>BA 3200</span><br><br>
+      <button class="ui basic large button">
+        Learn more
+      </button>
+    </div>
+  </section>
+
+
+  <section class="page-container" id="conference">
+    <h1 class="bebas">Conference</h1>
+    <h3 class="robotobold">For the first time in its nearly 40 years of history, ICSE – the premier conference in
+      software engineering sponsored by ACM and IEEE CS – is coming to Latin America. Please join us in Buenos Aires in
+      May 20-28, 2017 to present, discuss and be inspired at the event where top minds in software engineering research,
+      practice and education discuss the most recent innovations, trends, and experiences.</h3>
+    <div class="event">
+      <span>Thursday, January 2 2016</span><br>
+      <span>11:00am - 1:00pm</span><br>
+      <span>BA 3200</span><br><br>
+      <button class="ui basic large button">
+        Learn more
+      </button>
+    </div>
+  </section>
+
+
+  <section class="page-container" id="news">
+    <h1 class="bebas">Newsletter</h1>
+
+    <div class="ui fluid vertical menu robotothin">
+      <a onclick="showIssue('issue1')" class="item">Issue #1</a>
+      <a onclick="showIssue('issue1')" class="item">Issue #2</a>
+      <a onclick="showIssue('issue1')" class="item">Issue #3</a>
+    </div>
+</div>
+
+</section>
+
+<section class="page-container" id="resources">
+  <h1 class="bebas ">Resources</h1>
+
+
+  <div class="ui list">
+    <div class="item">
+      <a class="header">Resource 1</a>
+      <div class="text description">
+        Resource description <a>Resource link</a>.
+      </div>
+    </div>
+    <div class="item">
+      <a class="header">Resource 2</a>
+      <div class="text description">
+        Resource description <a>Resource link</a>.
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="page-container" id="team">
+  <h1 class="bebas ">The Team</h1>
+
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/daniel.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Nicole Provan</div>
+        <span class="text">President</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/helen.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Sunny Wang</div>
+        <span class="text">Vice President</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/elliot.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Yola El-Dahr</div>
+        <span class="text">Secretary</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/daniel.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Sarah Kamaluddin</div>
+        <span class="text">Secretary</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="team_mugs/christina.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Christina Chung</div>
+        <span class="text">Executive of Promotions and Social Media</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="team_mugs/jane.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Jane Huang</div>
+        <span class="text">Executive of Promotions and Social Media</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/daniel.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Kylin Zhang</div>
+        <span class="text">Executive of Promotions and Social Media</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/helen.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Yin Kot</div>
+        <span class="text">Treasurer</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/elliot.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Christian Schoug</div>
+        <span class="text">Treasurer</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/daniel.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Hasan Shafqat</div>
+        <span class="text">Conference Director</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="team_mugs/bushra.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Bushra Ahmed</div>
+        <span class="text">Volunteer Chair and College Representative</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/elliot.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Kathrina De Villa</div>
+        <span class="text">Research Chair</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/daniel.jpg">
+      </div>
+      <div class="content">
+        <div class="header">N/A</div>
+        <span class="text">Workshop Chair</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="team_mugs/sua.png">
+      </div>
+      <div class="content">
+        <div class="header">Sua Cho</div>
+        <span class="text">Promotional Material Design and Distribution Chair</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/elliot.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Alex Mulligan</div>
+        <span class="text">College Representative Coordinator</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/helen.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Thaddea Chua</div>
+        <span class="text">Outreach Material Designing Volunteer</span>
+      </div>
+    </div>
+  </div>
+  <div class="member">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/elliot.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Marisa Balleani</div>
+        <span class="text">Material Distribution Volunteer</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="page-container" id="contact">
+  <h1 class="bebas ">Contact</h1>
+  <span class="robotothin">Contact us at</span>
+  <a href="mailto:healthymindsut@gmail.com<?Subject=Inquiry">healthymindsut@gmail.com</a><span>.</span>
+</section>
+
+<div class="ui basic modal issue1">
+          <div class="ui header bebas">Issue #1: January 1, 2017</div>
+          <div class="ui clearing divider"></div>
+          <p class="robotothin">What is anger?
+
+Anger is an emotion that tells us when something may be wrong. For example, we may feel angry when something is beyond our control or feels unfair, when we can’t reach a goal, or when someone is hurt or threatened. We can also feel angry when we are under too much stress. Anger can involve a wide range of feelings. We may be a little annoyed over a minor incident, like being stuck in traffic or missing our bus. More serious problems, like getting hurt or seeing someone else get hurt, may cause strong feelings like rage. Sometimes, we just feel angry for no reason.
+
+Anger may be a problem for you when it’s:
+
+Much stronger than you’d expect based on the situation
+Very frequent, to the point that you can’t enjoy things anymore
+Caused by something that happened a long time ago
+ Making you act violently towards yourself, someone else, or someone’s property
+Interfering with your ability to do your job
+Hurting your relationships with loved ones
+Affecting your physical health
+What can I do about it?
+
+Anger is a normal reaction to some situations. Anger can also be helpful when it matches the situation and motivates people to take action or work towards a goal. However, anger that’s dealt with in unhealthy ways can create problems and affect your well-being. Fortunately, there are some things you can do to deal with your anger.
+
+Immediate strategies
+
+These strategies won’t solve the problem. Instead, they can help put you back in control so you can find a productive way to deal with the problem. They may also be useful if you find yourself saying or doing things in anger that you regret later.
+
+Leave the situation that’s making you angry, if possible.
+Count to 10.
+Repeat calming phrases such as, “Take it easy” or, “Will this matter in six months?”
+Breathe deeply. Many people, especially adults, breathe from their chest, which doesn’t give the benefits of a deep breath. Try to breathe deep into your stomach. You’re on the right track if your stomach goes out first. It may seem simple, but taking deep breaths can help calm your mind, slow your heart, and even lower blood pressure.
+Try to shift your attention to something more pleasant or relaxing. This can be very helpful for minor annoyances that you can’t control.
+Short-term strategies
+
+When you are calmer, these are strategies to help you look at your feelings around a particular situation. They don’t take a lot of time, but they can make a big difference.
+
+Acknowledge that you are angry. Angry feelings don’t go away if you bottle them up and avoid dealing with them.
+Consider whether your reaction matches the situation. Ask yourself, “What would I think of someone else if I saw them getting angry in this situation?” or, “Is this situation really as bad as I am making it out to be?” You can also ask someone you trust for their perspective—they may help you look at the problem in a more balanced way.
+Look at your thoughts. Sometimes the way you think can fuel anger—for example, assuming that another person is intentionally trying to hurt or annoy you, in a situation when that may not be true.
+ Identify the source of your anger. If the actions or words of another person are hurting you, try to deal with them directly in a peaceful and productive way. Assertiveness skills can be a great way to do this.
+Look for humour in the situation—sometimes it’s easy to take minor problems too seriously.
+Longer-term solutions
+
+These strategies take more time and effort, but they can help you cope with anger as it comes up in many different situations. The goal is to change the way you react to anger so it doesn’t cause problems in the first place.
+
+Learn what triggers your anger. Some people are triggered by other people, such as a boss, friend, or family member. Certain emotions, such as feeling controlled, ashamed or guilty, can also trigger anger for some people.
+Identify your early warning signs so you can take action before your anger turns into full-blown rage. Common early warning signs include a pounding heart, tight chest or jaw, feeling resentful or irritated, or feeling like lashing out.
+Talk to someone you trust who may be able to see things more clearly than you do. Remember that anger can tell us we need to solve a problem. Another person can help you practice identifying the real problem, brainstorming solutions, and testing solutions out.
+ If your anger is caused by something beyond your control, such as a job loss, learn how others have dealt with a similar problem successfully and try their strategies.
+Learn and practice skills like healthy thinking, problem solving and stress management. All of these can help manage anger.
+Many people find physical activity very helpful. Try going for a walk, playing your favourite sport, or cleaning the house.
+Make sure you eat well and get enough sleep. We often lose patience and get irritated more easily when we’re tired or hungry.
+Learn mindfulness practices like meditation. Mindfulness teaches you how to look at your thoughts in the present moment without judgment. It may also help teach you to tolerate angry feelings without pushing them away.
+Learn more about assertiveness. Anger can persist when we avoid talking directly to someone about something that has made us angry. Assertiveness is a way of telling others what you feel or what you need while respecting their feelings or needs.
+If you feel easily frustrated when people don’t act the way you want them to, remember that you cannot control how other people behave. You can only control how you choose to react to those behaviours.
+Anger and irritability can sometimes be signs of depression or anxiety. If anger continues to cause problems or you notice that anger occurs with other symptoms, it’s a good idea to talk with a doctor or mental health professional.
+
+Do you need more help?
+
+Contact a community organization like the Canadian Mental Health Association to learn more about support and resources in your area.
+
+Founded in 1918, The Canadian Mental Health Association (CMHA) is a national charity that helps maintain and improve mental health for all Canadians. As the nation-wide leader and champion for mental health, CMHA helps people access the community resources they need to build resilience and support recovery from mental illness.
+</p>
+  
+  <div class="actions">
+      <div class="ui basic cancel inverted button">
+      <i class="remove icon"></i>
+      Exit
+    </div>
+  </div>
+
+
+      </div>
+
 
 </div>
 
-<script src="jackpotMachine.js"></script>
+<script>
+  
+  function showIssue(iss) {
+    $('.ui.basic.modal.' + iss)
+      .modal('show')
+    ;
+
+$('.ui.basic.modal.' + iss).modal('setting', { detachable:false }).modal('show').addClass('scrolling active');
+    $('body').addClass('scrolling');  }
+</script>
+
 
 
 </body>
+
+
 </html>
