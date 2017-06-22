@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VR Perception Plans</title>
+
+
+<link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+<link rel="stylesheet" href="semantic.min.css"/>
+
+<style>
+	
+img {
+	margin:1vw;
+}
+
+</style>
+
+</head>
+
+
+<body style="margin:2vw">
+<h1>Perception in VR</h1>
+
+<section>
+	<h2>Research Questions</h2>
+	<ol>
+		<li>Is there a threshold at which users will experience a break in presence?</li>
+		<li>How do these variables compare with one another?</li>
+		<li>How do these variables interplay?</li>
+	</ol>
+</section>
+<br>
+<br>
+<section>
+	<h2>Variables of interest</h2>
+	
+	<ol>
+		<li>
+
+		As realistic as possible <br>
+
+		<img style="max-width:7vw;margin:1vw" src="none.gif"/>
+
+		</li>
+
+<br><br>
+
+
+		<li>Size/proportion <br>
+
+			
+
+		<table class="ui celled table"> 
+			  <tr>
+			    <td>Generic proportions and hand size</td>
+			    <td>Generic proptions and acurate hand size</td> 
+			  </tr>
+			  <tr>
+			    <td><img style="max-width:7vw;margin:1vw" src="genericprops.gif"/></td>
+			    <td>N/A</td> 
+			 </tr>
+		</table>
+		</li>
+
+<br><br>
+
+
+		<li>Degrees of freedom
+
+<br>
+
+			
+
+		<table class="ui celled table"> 
+			  <tr>
+			    <td>All DOF restricted except translation of hand</td>
+			    <td>All DOF restricted but wrist</td> 
+ 				<td>Flexion of distal phalanges restricted</td> 
+ 				<td>Flexion of distal and intermediate phalanges restricted</td> 
+				<td>Finger abduction restricted</td> 
+				<td>Finger abduction and flexion of distal phalanges restricted</td> 
+				<td>Finger abduction, distal and intermediate phalanges flexion restricted</td> 
+				<td>Middle, ring, and pinky move with index</td> 
+			  </tr>
+			  <tr>
+			    <td><img style="max-width:7vw;margin:1vw" src="akk.gif"/></td>
+			    <td><img style="max-width:7vw;margin:1vw" src="wrist.gif"/></td> 
+			    <td>N/A</td>
+			    <td><img style="max-width:7vw;margin:1vw" src="onefinger.gif"/></td> 
+			    <td><img style="max-width:7vw;margin:1vw" src="extension.gif"/></td> 
+			    <td>N/A</td>
+			    <td><img style="max-width:7vw;margin:1vw" src="abductonefinger.gif"/></td> 
+			    <td><img style="max-width:7vw;margin:1vw" src="movewith.gif"/></td> 
+
+			 </tr>
+		</table>
+		</li>
+
+<br><br>
+
+		<li>Tracking origin<br>
+<table class="ui celled table"> 
+			  <tr>
+			    <td>Shifted forward</td>
+			    <td>Shifted backward</td> 
+ 				<td>Shifted up</td> 
+ 				<td>Shifted down</td> 
+				<td>Shifted left</td> 
+				<td>Shifted right</td> 
+			  </tr>
+			  <tr>
+			    <td><img style="max-width:7vw;margin:1vw" src="origin.gif"/></td>
+			    <td>Didn't film it</td>
+			    <td>Didn't film it</td>
+			    <td>Didn't film it</td>
+			    <td>Didn't film it</td>
+			    <td>Didn't film it</td>
+
+			 </tr>
+
+		</table>
+
+		</li>
+
+		<br><br>
+
+		<li>Displacement<br>
+		<table class="ui celled table"> 
+		<tr>
+			    <td>True postion * 2 (left: no distortion added, right: distortion added)<td>
+			    </tr>
+ <tr>
+ 			    <td><img style="max-width:7vw;margin:1vw" src="2x2.gif"/>
+
+			    <img style="max-width:7vw;margin:1vw" src="2x.gif"/></td>
+			    </tr>
+		</table>
+
+		</li>
+
+		<br><br>
+
+		<li>Render style<br>
+
+		<table class="ui celled table"> 
+				<tr>
+			    <td>Stick</td>
+			     <td>Ball</td>
+			      <td>High realism skin texture</td>
+			            <td>High realism single shade</td>
+			    </tr>
+ 				<tr>
+ 			    <td><img style="max-width:7vw;margin:1vw" src="none.gif"/></td>
+			    <td>Forgot to film</td>
+			    <td>N/A</td>
+			    <td>N/A</td>
+
+			    </tr>
+		</table>
+
+		</li>
+<br><br>
+
+
+		<li>Rigidity<br>
+					<table class="ui celled table"> 
+		<tr>
+			    <td>Rigid (hand cannot go through objects)/non-rigid (hand just passes through objects)<td>
+			    </tr>
+ <tr>
+ 			    <td><img style="max-width:7vw;margin:1vw" src="rigid.gif"/></td>
+			    </tr>
+		</table>
+
+
+
+		</li>
+	</ol>
+
+<br>
+<br>
+<br>
+
+<section>
+	<h2>Tasks</h2>
+	<ol>
+		<li><h3>Hand pose matching</h3>
+					<img src="pose.gif"></img>
+			<ul><li>Addresses: Q2 and Q3 (sense of agency)</li>
+			<li>Trials: 22 distortions x 4 poses (from THING paper, see below)</li>
+			</ul>
+			<br>
+
+		<img src="Picture1.png"></img>
+
+		</li>
+<br><br>
+
+
+		<li><h3>Targeting</h3><br>
+			<img src="targeting.gif"></img>
+
+<ul><li>Addresses: Q2 and Q3 (sense of ownership)</li>
+			<li>22 distortions x 4 obstacles x 2 target locations</li>
+			</ul>
+		</li>
+
+<br><br>
+
+
+		<li><h3>Prop interaction</h3><br>
+
+			<img src="prop.gif"></img>
+
+<ul><li>Addresses: Q2 and Q3 (sense of agency)</li>
+			<li>22 distortions x 9 prop size/shape (same proportions and size, shorter, longer, size 2x same proportions, size 2x shorter, size 2x longer, size 0.5x same proportions, size 0.5 shorter, size 0.5x longer) x 2 real prop or virtual only (virtual prop is grasped when thumb and another finger touched prop, prop then gets attached to palm of hand i.e.	<img src="virtual.gif"></img>)
+</li>
+			</ul>
+			
+
+		
+
+		</li>
+	</ol>
+</section>
+
+
+</section>
+
+
+
+
+</body>
+</html>
